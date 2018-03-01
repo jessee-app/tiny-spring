@@ -7,17 +7,42 @@
 
 ## 说明
 - 1、本文简易Spring框架参考[Github](https://github.com/code4craft/tiny-spring),代码注释参考[Github](https://github.com/greyireland/tiny-spring).
-- 2、所有权归原作者，在这里自己只是临摹，自己比较了解一点Spring，所以就参考注释还原过程。不懂的可以搜视频。
-- 3、大家一起努力，一起学习，有兴趣的也可以看下我的[Github](https://github.com/guoxiaoxu)。
+- 2、所有权归原作者，在这里自己只是临摹，自己比较了解一点Spring，所以就参考注释还原过程。不懂的可以看作者的视频。
+- 3、大家一起努力，一起学习，有兴趣的也可以看下我的[Github](https://github.com/guoxiaoxu/tiny-spring)。
 - 4、看本文之前希望你有一份Spring源码。对照着找你想要的接口和类。加深印象。
 
 
 `tiny-spring`是为了学习Spring的而开发的，可以认为是一个Spring的精简版。Spring的代码很多，层次复杂，阅读起来费劲。我尝试从使用功能的角度出发，参考Spring的实现，一步一步构建，最终完成一个精简版的Spring。
 有人把程序员与画家做比较，画家有门基本功叫临摹，tiny-spring可以算是一个程序的临摹版本-从自己的需求出发，进行程序设计，同时对著名项目进行参考。
 
+
+1、时序图-普通bean的加载过程
+
+![](https://i.imgur.com/8fpbraX.png)
+
+
+2、加载资源的主要相关类
+
+![](https://i.imgur.com/LLYjEJV.png)
+
+3、从xml中加载bean定义的主要相关类
+
+![](https://i.imgur.com/FJQBJvJ.png)
+
+4、装配bean的主要相关类
+
+![](https://i.imgur.com/bIRX2nQ.png)
+
+
+5、实现ApplicationContext接口的相关类
+
+![](https://i.imgur.com/0bbfcFd.png)
+
+
 ## 第一部分：IoC容器
 
 ### 1.step1-最基本的容器
+
 
 IoC最基本的角色有两个：容器(BeanFactory)和Bean本身。这里使用BeanDefinition来封装了bean对象，这样可以保存一些额外的元信息。测试代码：
 ```java
@@ -36,6 +61,8 @@ helloWorldService.helloWorld();
 
 
 1、首先我们来看下整体代码结构，这里的要点是BeanFactory接口。我们应该面向接口编程。
+
+
 
 ![](https://i.imgur.com/KPiIG5b.jpg)
 
@@ -246,6 +273,7 @@ helloWorldService.helloWorld();
 ----------
 
 ### step4-读取xml配置来初始化bean
+
 
 1、看到读取你总得有IO流吧 ，还有有资源啊(Xxx.xml),还有一个读取器。让我们看下重要的接口和实现类。
 
@@ -585,3 +613,143 @@ HelloWorldService helloWorldService = (HelloWorldService) applicationContext.get
 helloWorldService.helloWorld();
 ```
 是不是非常熟悉？至此为止，我们的tiny-spring的IoC部分可说完工了。这部分的类、方法命名和作用，都是对应Spring中相应的组件。虽然代码量只有400多行，但是已经有了基本的IoC功能！
+
+## 第二部分：AOP及实现
+AOP分为配置(Pointcut，Advice)，织入(Weave)两部分工作，当然还有一部分是将AOP整合到整个容器的生命周期中。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-
